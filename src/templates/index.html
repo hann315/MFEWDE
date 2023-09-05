@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  
-  <title>Restaurant Apps Starter Project</title>
+    <title>HangryBites &mdash; Bite into Happiness with HangryBites!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="../public/images/favicon/favicon.ico" type="image/x-icon">
 </head>
-<body>
-  <h1>Restaurant Apps Starter Project</h1>
-  <p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-  <p>Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros sebagai background hero elemen</p>
-  <img src="./images/heros/hero-image_1.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_2.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_3.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_4.jpg" width="450" alt="">
+<body id="home">
+    <a href="#main-content" class="skip-to-content">Skip to Content</a>
+    <!-- app Bar -->
+    <header class="header">
+        <a href="/">
+            <h1 class="nav_logo">HangryBites</h1>
+        </a>
+        <button class="menu" id="menu" aria-label="button menu dropdown on mobile">☰</button>
+        <nav id="drawer" class="nav">
+            <ul class="nav_list">
+                <li class="nav_item"><a href="/">Home</a></li>
+                <li class="nav_item"><a href="#">Favorite</a></li>
+                <li class="nav_item"><a href="https://www.linkedin.com/in/fafr/" target="_blank" rel="noopener">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Hero -->
+    <div class="hero">
+        <div tabindex="0" class="hero_inner">
+            <h1 class="hero_title">Welcome to <span class="hero_bold">HangryBites</span></h1>
+            <p class="hero_tagline">Bite into Happiness with HangryBites!</p>
+            <a href="#main-content" class="hero_button">Read more...</a>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <main id="main-content" class="main-content__container">
+        <h2 tabindex="0" class="explore-restaurant__label">Explore Restaurant</h2>
+        <section id="explore-restaurant-list"></section>
+    </main>
+    <!-- Footer Bar -->
+    <footer tabindex="0">
+        <ul>
+            <li><span>&copy; 2023 HangryBites. All rights reserved.</span></li>
+            <li><span>with ❤️ by FAFR</span></li>
+        </ul>
+    </footer>
 </body>
 </html>
