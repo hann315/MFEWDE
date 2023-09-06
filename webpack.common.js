@@ -13,14 +13,18 @@ module.exports = {
   },
   module: {
     rules: [
+      // Rule for both CSS and SCSS files
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         use: [
           {
             loader: 'style-loader',
           },
           {
             loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
           },
         ],
       },
