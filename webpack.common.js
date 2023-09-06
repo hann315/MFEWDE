@@ -13,7 +13,6 @@ module.exports = {
   },
   module: {
     rules: [
-      // Rule for both CSS and SCSS files
       {
         test: /\.(css|scss)$/,
         use: [
