@@ -3,7 +3,7 @@
 :root {
     --primary-color: #E3FDFD;
     --secondary-color: #FF2E63;
-    --liner-gradient: linear-gradient(71.9deg, #354c6282 10.77%, #8633332b 92.46%);
+    --hover-color: #2C3333;
 }
 
 * {
@@ -24,7 +24,7 @@
     position: absolute;
     top: -100px;
     left: 0;
-    background-color: #f4c530;
+    background-color: #FF2E63;
     color: black;
     padding: 8px;
     z-index: 100;
@@ -48,9 +48,9 @@
 }
 
 nav h1 {
-    text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'Dancing Script', cursive;
+    font-size: 32px;
 }
 
 nav h1 a {
@@ -63,12 +63,13 @@ nav h1 a {
 }
 
 nav a:hover{
-    color: #C36A2D;
+    color: var(--hover-color);
 }
 
 .menu-list {
-    display: flex;
     font-family: 'Raleway', sans-serif;
+    display: flex;
+    text-transform: uppercase;
 }
 
 .menu-list li {
@@ -85,8 +86,8 @@ nav a:hover{
 
 .menu-list a:hover {
     transition-duration: 0.2s;
-    border-bottom: 2px solid #E2C275;
-    color: #C36A2D;
+    border-bottom: 2px solid var(--hover-color);
+    color: var(--hover-color);
 }
 
 .menu-button {
@@ -99,7 +100,7 @@ nav a:hover{
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
-    filter: brightness(50%);
+    filter: brightness(60%);
 }
   
 .hero-description {
@@ -114,22 +115,27 @@ nav a:hover{
   
 .hero-description h2 {
     font-size: 50px;
+    font-weight: 500;
     text-align: center;
     font-family: 'Raleway', sans-serif;
 }
   
 .hero-description p {
-    font-size: 26px;
+    font-size: 28px;
+    font-weight: 400;
     margin-top: 16px;
     text-align: center;
     font-family: "Dancing Script",cursive;
 }
 
 .hero-description span {
-    font-family: "Dancing Script",cursive;
+    font-weight: bold;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    padding: 0.1em 0.2em;
     border-radius: 0.5em;
     display: inline-block;
-    font-weight: bold;
+    font-family: "Dancing Script",cursive;
 }
 
 
@@ -146,9 +152,10 @@ main {
    
 .content__heading {
     margin: 40px auto;
-    font-weight: 700;
-    font-size: 35px;
+    font-weight: 600;
+    font-size: 32px;
     text-align: center;
+    font-family: 'Nunito', sans-serif;
 }
    
 .resto-list {
@@ -194,6 +201,7 @@ main {
 }
    
 .resto-item .resto-name a {
+    font-family: 'Nunito', sans-serif;
     color: black;
     text-decoration: none;
     font-size: 22px;
@@ -235,6 +243,7 @@ main {
     border-radius: 8px;
     margin-top: 16px;
     padding: 20px;
+    font-family: 'Raleway', sans-serif;
 }
 
 .detail .title {
@@ -254,6 +263,7 @@ main {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    font-family: 'Nunito', sans-serif;
 }
 
 .detail .info ul li {
@@ -308,6 +318,7 @@ main {
 
 
 footer {
+    font-family: 'Nunito', sans-serif;
     width: 100%;
     padding: 22px;
     background-color: var(--secondary-color);

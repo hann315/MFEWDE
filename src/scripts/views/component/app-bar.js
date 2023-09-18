@@ -15,9 +15,9 @@ class Appbar extends HTMLElement {
           <i class="fa fa-bars"></i>
         </button>
         <ul class="menu-list">
-          <li><a href="#/home" title="Link to Home Page">Home</a></li>
+          <li><a href="#" title="Link to Home Page">Home</a></li>
           <li><a href="#/favorite" title="Link to Favorite Page">Favorite</a></li>
-          <li><a href="https://www.linkedin.com/in/fafr/" target="_blank" rel="noreferrer noopener">About Us</a></li>
+          <li><a href="https://www.linkedin.com/in/fafr/" target="_blank" rel="noreferrer noopener" title="Link to LinkedIn">About Us</a></li>
         </ul>
       </nav>
     `;
