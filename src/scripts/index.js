@@ -1,34 +1,46 @@
-import 'regenerator-runtime';
-import '../styles/main.css';
-import '../styles/responsive.css';
-import './views/component/app-bar';
-import './views/component/app-hero';
-import './views/component/app-footer';
-import App from './views/app';
-import swRegister from './utils/sw-register';
+import 'regenerator-runtime'; /* for async await transpile */
+import '../styles/main.scss';
+import '../styles/responsive.scss';
+import DATA from '../public/data/DATA.json'
 
-// DOM elements
-const skipToContent = document.querySelector('.skip-to-content');
-const mainContent = document.querySelector('#mainContent');
+// Hamburger menu
+const menu = document.querySelector('#menu');
+const hero = document.querySelector('.hero');
+const main = document.querySelector('main');
+const drawer = document.querySelector('#drawer');
 
-// Initialize the App
-const app = new App({
-  button: document.querySelector('.menu-button'),
-  drawer: document.querySelector('#nav'),
-  content: mainContent, // Use the variable directly here for consistency
+function closeDrawer() {
+    drawer.classList.remove('open');
+}
+
+menu.addEventListener('click', function (event) {
+    drawer.classList.toggle('open');
+    event.stopPropagation();
 });
 
-// Event listeners
-window.addEventListener('hashchange', () => {
-  app.renderPage();
-});
+hero.addEventListener('click', closeDrawer);
+main.addEventListener('click', closeDrawer);
 
-window.addEventListener('load', () => {
-  app.renderPage();
-  swRegister();
-});
+// Get Explore Restaurant and do DOM manipulation
+const getExploreRestaurant = (data) => {
+    const restaurantList = document.getElementById('explore-restaurant-list');
+    const restaurantHTML = data.restaurants.map(restaurant => `
+        <article tabindex="0" class="card">
+            <div class="card-img-container">
+                <img class="card-image" alt="${restaurant.name}" src="${restaurant.pictureId}"/>
+                <span class="card-rating">
+                    <i title="ratings" class="fa fa-star"></i>
+                    <span>${restaurant.rating}</span>
+                </span>
+            </div>
+            <div class="card-content">
+                <p class="card-content-title">${restaurant.name}, ${restaurant.city}</p>
+                <p class="card-content-title-description">Description: </p>
+                <p class="card-content-description">${restaurant.description}</p>
+            </div>
+        </article>
+    `).join('');
+    restaurantList.innerHTML = restaurantHTML;
+}
 
-skipToContent.addEventListener('click', (event) => {
-  event.preventDefault();
-  mainContent.focus();
-});
+getExploreRestaurant(DATA);
