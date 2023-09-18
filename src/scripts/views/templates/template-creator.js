@@ -4,8 +4,8 @@ import CONFIG from '../../globals/config';
 const createRestaurantItemTemplate = (restaurant) => `
 <div class="resto-item">
     <div class="resto-header">
-      <img class="resto-image" alt="${restaurant.name}"
-           src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
+      <img class="resto-image" alt="Picture of ${restaurant.name}"
+           src="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}">
       <div class="resto-rating">
         <p>⭐️<span class="resto-rating__score">${restaurant.rating}</span></p>
       </div>
@@ -21,7 +21,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 const createRestaurantDetailTemplate = (restaurant) => `
 <h2 class="content__heading">${restaurant.name} Detail</h2>
 <div class="detail">
-    <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Picture of ${restaurant.name}" />
+    <img class="lazyload" src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" alt="Picture of ${restaurant.name}" />
 
     <div class="info">
       <h2>Information</h2>

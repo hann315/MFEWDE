@@ -210,7 +210,7 @@ main {
 
 .resto-item .resto-city {
     font-size: 17px;
-    font-weight: lighter;
+    font-weight: 400;
     color: black;
     padding-top: 10px;
   }
