@@ -12,6 +12,18 @@ class RestaurantDbSource {
     const responseJson = await response.json();
     return responseJson.restaurant;
   }
+
+  static async postReview(data) {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+    const response = await fetch(API_ENDPOINT.POST_REVIEW, options);
+    return response.json();
+  }
 }
 
 export default RestaurantDbSource;

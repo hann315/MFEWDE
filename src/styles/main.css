@@ -4,23 +4,26 @@
     --primary-color: #E3FDFD;
     --secondary-color: #FF2E63;
     --hover-color: #2C3333;
+    --black: #3e3e3e;
+    --white: #faf0e6;
+    --yellow: #e7cc00;
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-  }
+}
   
-  body {
+body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-  }
+}
   
-  .skip-to-content {
+.skip-to-content {
     position: absolute;
     top: -100px;
     left: 0;
@@ -29,13 +32,13 @@
     padding: 8px;
     z-index: 100;
     text-decoration: none;
-  }
+}
   
-  .skip-to-content:focus {
+.skip-to-content:focus {
     top: 80px;
-  }
+}
 
-  nav {
+nav {
     height: 80px;
     position: fixed;
     display: flex;
@@ -140,7 +143,7 @@ nav a:hover{
 
 /* Empty favorite image */
 .empty {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Nunito', sans-serif;
     text-align: center;
 }
   
@@ -165,6 +168,96 @@ nav a:hover{
     border-radius: 20px;
     margin-bottom: 20px;
     object-fit: cover;
+}
+
+/* menu detail */
+.detail-menu {
+    display: flex;
+    flex-direction: column;
+    margin-block: 25px;
+    justify-content: space-around;
+}
+  
+.menu-titel {
+    text-align: center;
+    font-size: 1.6em;
+}
+  
+.menu-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.left {
+    position: absolute;
+    display: inline-block;
+    min-width: 44px;
+    min-height: 44px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 6px;
+    background: none;
+    color: var(--black);
+    font-size: 1.6em;
+    border-radius: 3px;
+    transition: all 0.1s ease-out;
+}
+  
+.right {
+    position: absolute;
+    display: inline-block;
+    min-width: 44px;
+    min-height: 44px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 6px;
+    background: none;
+    color: var(--black);
+    font-size: 1.6em;
+    border-radius: 3px;
+    transition: all 0.1s ease-out;
+}
+  
+.left:hover, .right:hover {
+    background-color: var(--yellow);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+}
+  
+.menu-container {
+    width: 80%;
+    padding-block: 30px;
+    overflow: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+  
+.menu-container::-webkit-scrollbar {
+    display: none;
+}
+  
+.detail-menu li{
+    display: inline-block;
+    margin-inline: 5px;
+    border-radius: 5px;
+    list-style: none;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    transition: all 0.1s ease-out;
+}
+  
+.detail-menu li:hover {
+    background-color: rgb(255, 255, 208);
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
 }
 
 main {
@@ -381,4 +474,90 @@ footer {
 .no-liked {
     font-size: 28px;
     text-align: center;
+}
+
+/* Review */
+.title-review {
+    text-align: center;
+    color: var(--black);
+    font-size: 2em;
+    margin-top: 20px;
+}
+  
+.detail-review {
+    width: 100%;
+}
+  
+.detail-review-item {
+    background-color: white;
+    padding: 1.8em;
+    margin-block: 13px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0 #0000001a;
+}
+  
+.header-review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #3e3e3e 1px solid;
+    padding: 10px;
+}
+  
+.date-review {
+    opacity: 0.7;
+}
+  
+.name-review {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+  
+.body-review {
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+/* form */
+.form-review {
+    background-color: white;
+    padding: 1.8em;
+    margin-block: 13px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #0000001a;
+    width: 100%;
+      height: 100%;
+}
+  
+.form-review span {
+    padding-inline: 5px;
+    background-color: var(--yellow);
+}
+  
+.form-content {
+    margin-block: 15px;
+}
+  
+.form-label {
+    display: block;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+  
+.form-control {
+    display: block;
+    width: 100%;
+    font-size: 1.2em;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px var(--black) solid;
+}
+  
+.btn {
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 10px;
 }

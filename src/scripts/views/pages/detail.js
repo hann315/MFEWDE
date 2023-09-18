@@ -3,8 +3,8 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantDbSource from '../../data/restaurant-source';
 import {
   createRestaurantDetailTemplate,
-  createRestaurantReviewTemplate,
 } from '../templates/template-creator';
+import PostReview from '../../utils/postReviewInitiator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
@@ -36,12 +36,6 @@ const Detail = {
         },
       });
 
-      restaurantContainer.innerHTML += `
-        <resto-review>
-          <h2>Reviews</h2>
-        </resto-review>
-      `;
-
       const restoReview = document.querySelector('resto-review');
       resto.customerReviews.forEach((review) => {
         restoReview.innerHTML += createRestaurantReviewTemplate(review);
@@ -49,6 +43,35 @@ const Detail = {
     } catch (error) {
       console.error('An error occurred:', error);
     }
+
+    const submitReview = document.getElementById('submit-review');
+    submitReview.addEventListener('click', (event) => {
+      event.preventDefault();
+      PostReview();
+    });
+
+    const left = document.querySelector('#left-btn');
+    const right = document.querySelector('#right-btn');
+    const left2 = document.querySelector('#left-btnn');
+    const right2 = document.querySelector('#right-btnn');
+    const menuDrink = document.querySelector('#drink');
+    const menuFood = document.querySelector('#food');
+
+    left.addEventListener('click', () => {
+      menuDrink.scrollBy(-100, 0);
+    });
+
+    right.addEventListener('click', () => {
+      menuDrink.scrollBy(100, 0);
+    });
+
+    left2.addEventListener('click', () => {
+      menuFood.scrollBy(-100, 0);
+    });
+
+    right2.addEventListener('click', () => {
+      menuFood.scrollBy(100, 0);
+    });
   },
 };
 

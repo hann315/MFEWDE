@@ -23,8 +23,12 @@ const createRestaurantDetailTemplate = (restaurant) => `
 <div class="detail">
     <img class="lazyload" src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" alt="Picture of ${restaurant.name}" />
 
+    <div class="overview">
+      <h2>Overview</h2>
+      <p>${restaurant.description}</p>
+    </div>
     <div class="info">
-      <h2>Information</h2>
+      <h2>Information & Menu</h2>
       <ul>
         <li>
           <h3>Kota</h3>
@@ -38,36 +42,69 @@ const createRestaurantDetailTemplate = (restaurant) => `
           <h3>Rating</h3>
           <p>${restaurant.rating}</p>
         </li>
-        <li>
-          <h3>Foods Menu</h3>
-          <span id="food">
-          <p>${restaurant.menus.foods.map((food) => food.name).join(', ')}</p>
-          </span>
-        </li>
-        <li>
-          <h3>Drinks Menu</h3>
-          <span id="drink">
-            <p>${restaurant.menus.drinks.map((food) => food.name).join(', ')}</p>
-          </span>
-        </li>
       </ul>
+      
+      <div class="detail-menu">
+      <ul class="drink"> 
+      <h4 class="menu-titel" tabindex="0"> Drink </h4>
+                <div class="menu-wrap">
+                <button class="left" id="left-btn"><</button>
+                  <div class="menu-container" id="drink">
+                    ${restaurant.menus.drinks.map((drink) => `
+                      <li class="menu-items" tabindex="0"><p>${drink.name}</p></li>
+                    `).join('')}
+                  </div>
+                <button class="right" id="right-btn">></button>
+                </div> 
+        </ul>
+        <ul class="food"> 
+        <h4 class="menu-titel" tabindex="0"> Food </h4>
+                  <div class="menu-wrap">
+                  <button class="left" id="left-btnn"><</button>
+                    <div class="menu-container" id="food">
+                      ${restaurant.menus.foods.map((food) => `
+                        <li class="menu-items" tabindex="0"><p>${food.name}</p></li>
+                      `).join('')}
+                    </div>
+                  <button class="right" id="right-btnn">></button>
+                </div> 
+        </ul>
     </div>
-
-    <div class="overview">
-      <h2>Overview</h2>
-      <p>${restaurant.description}</p>
     </div>
+  </div>
 
+  <h2 tabindex="0" class="title-review">${restaurant.customerReviews.length} Review(s)</h2>
+
+  <div class="container-review">
+      <div tabindex="0" class="detail-review">
+        ${restaurant.customerReviews.map((review) => `
+            <div class="detail-review-item">
+              <div class="header-review">
+                <p class="name-review">${review.name}</p>
+                <p class="date-review">${review.date}</p>
+              </div>
+              <div class="body-review">
+                ${review.review}
+              </div>
+            </div>
+          `).join('')}
+      </div>
+      <div class="form-review">
+      <h1><span>Post your review!</span></h1>
+      <form>
+        <div class="form-content">
+          <label for="inputName" class="form-label">Name</label>
+          <input name="inputName" type="text" class="form-control" id="inputName">
+        </div>
+        <div class="form-content">
+          <label for="inputReview" class="form-label">Your Review</label>
+          <input name="inputReview" type="text" class="form-control" id="inputReview">
+        </div>
+        <button id="submit-review" type="submit" class="btn">Submit</button>
+      </form>
+    </div>
   </div>
   
-`;
-
-const createRestaurantReviewTemplate = (reviews) => `
-  <div class="review">
-    <p><span class="name">${reviews.name}</span></p>
-    <p><span class="date">${reviews.date}</span></p>
-    <p>${reviews.review}</p>
-  </div>
 `;
 
 const createLikeButtonTemplate = () => `
@@ -85,7 +122,6 @@ const createLikedButtonTemplate = () => `
 export {
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
-  createRestaurantReviewTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
 };
