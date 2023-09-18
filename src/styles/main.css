@@ -138,7 +138,34 @@ nav a:hover{
     font-family: "Dancing Script",cursive;
 }
 
-
+/* Empty favorite image */
+.empty {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+  
+.empty h1 {
+    font-size: 1.7em;
+    font-weight: 600;
+}
+  
+.empty a {
+    transition: all 0.1s ease-out;
+    color: #d4bb00;
+}
+  
+.empty a:hover {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+  
+.empty-thumb {
+    width: 50%;
+    border: #d0d0d0 2px solid;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
 
 main {
     width: 90%;
@@ -168,10 +195,17 @@ main {
    
 .resto-item {
     width: 100%;
-    box-shadow: 0 4px 8px 0 #00000033;
-    border-radius: 8px;
+    transition: .3s;
+    background-color: var(--primary-color);
+    border-radius: 1em;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.2);
     overflow: hidden;
 }
+
+.resto-item:hover {
+    box-shadow: 10px 10px 5px 0px var(--secondary-color);
+  
+  }
    
 .resto-header {
     position: relative;
@@ -193,6 +227,22 @@ main {
    
 .resto-item .resto-rating__score {
     margin-left: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--primary-color);
+    font-size: large;
+    background-color: var(--secondary-color);
+    padding: 0.4em 1.3em;
+    z-index: 1;
+    border-radius: 0 1em;
+    color: #000000;
+}
+
+.resto-item .resto-rating__score .fa {
+    font-size: smaller;
+    padding: 0.3em 0.8em 0.3em 0;
+    color: orange;
 }
    
 .resto-item .resto-info {
@@ -320,11 +370,12 @@ main {
 
 footer {
     font-family: 'Raleway', sans-serif;
+    font-size: 13px;
     width: 100%;
     padding: 22px;
     background-color: var(--secondary-color);
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .no-liked {

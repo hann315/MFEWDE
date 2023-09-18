@@ -6,6 +6,7 @@ class Footer extends HTMLElement {
   render() {
     this.innerHTML = `
         <p>&copy; 2023 HangryBites. All rights reserved.</p>
+        <p>with 💙 by FAFR</p>
     `;
   }
 }

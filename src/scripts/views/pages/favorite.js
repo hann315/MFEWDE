@@ -8,7 +8,8 @@ const Favorite = {
   async render() {
     return `
       <div class="content">
-        <h2 class="content__heading">Favorite Restaurant</h2>
+        <h2 class="content__heading">Your Favorite Restaurants</h2>
+        <div class="empty" id="empty"></div>
         <div id="resto-list" class="resto-list"></div>
       </div>
     `;
@@ -18,10 +19,13 @@ const Favorite = {
     try {
       const restos = await FavoriteRestoIdb.getAllResto();
       const restosContainer = document.querySelector('#resto-list');
+      const empty = document.querySelector('#empty');
 
       if (restos.length === 0) {
-        restosContainer.innerHTML = '<p class="no-liked">No favorite restaurants added.</p>';
-        return;
+        empty.innerHTML = `
+          <img class="empty-thumb" src="./images/empty/empty.jpg" alt="">
+          <h1>There is no data yet, <a href="#/">go to homepage</a></h1>
+        `;
       }
 
       restos.forEach((resto) => {

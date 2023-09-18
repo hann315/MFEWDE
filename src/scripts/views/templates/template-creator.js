@@ -7,7 +7,7 @@ const createRestaurantItemTemplate = (restaurant) => `
       <img class="resto-image" alt="Picture of ${restaurant.name}"
            src="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}">
       <div class="resto-rating">
-        <p>⭐️<span class="resto-rating__score">${restaurant.rating}</span></p>
+        <p><i class="fa fa-star"></i><span>${restaurant.rating}</span></p>
       </div>
     </div>
     <div class="resto-info">
@@ -72,13 +72,13 @@ const createRestaurantReviewTemplate = (reviews) => `
 
 const createLikeButtonTemplate = () => `
   <button aria-label="like this resto" id="likeButton" class="like">
-     <i class="fa fa-heart-o" aria-hidden="true"></i>
+    <i class="fa-regular fa-heart fa-beat"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
   <button aria-label="unlike this resto" id="likeButton" class="like">
-    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa-solid fa-heart fa-beat"></i>
   </button>
 `;
 
