@@ -6,7 +6,7 @@
     --hover-color: #2C3333;
     --black: #3e3e3e;
     --white: #faf0e6;
-    --yellow: #e7cc00;
+    --yellow: #00ADB5;
 }
 
 * {
@@ -16,7 +16,6 @@
 }
   
 body {
-    font-family: sans-serif;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -95,6 +94,10 @@ nav a:hover{
 
 .menu-button {
     display: none;
+    padding: 12px;
+}
+.menu-button i {
+    font-size: 2em;
 }
 
 .hero-image{
@@ -275,7 +278,7 @@ main {
     font-weight: 600;
     font-size: 32px;
     text-align: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
    
 .resto-list {
@@ -367,26 +370,34 @@ main {
     -webkit-box-orient: vertical;
 }
 
-.detail, resto-review {
+.detail {
     width: 70%;
     display: flex;
     flex-direction: column;
     margin: 16px auto ;
 }
 
-.detail h2, resto-review h2 {
+.detail h2 {
     color: black;
     text-align: center;
     padding-bottom: 15px;
     font-size: 25px;
+    font-family: 'Raleway', sans-serif;
 }
 
-.detail .info, .detail .overview, resto-review {
+.detail .info, .detail .overview {
     border: 1px solid #a0a0a0;
     border-radius: 8px;
     margin-top: 16px;
     padding: 20px;
-    font-family: 'Raleway', sans-serif;
+}
+
+.info span {
+    margin-left: 10px;
+}
+
+.info i {
+    color: #ff0000;
 }
 
 .detail .title {
@@ -419,26 +430,8 @@ main {
 }
 
 .detail .overview p {
+    font-family: 'Raleway', sans-serif;
     text-align: justify;
-}
-
-.review {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-    padding: 16px;
-    background-color: #F7F7F7;
-    border-radius: 10px;
-}
-
-.review .name {
-    font-weight: 600;
-}
-
-.review .date {
-    font-size: small;
-    color: #323232;
 }
 
 .like {
@@ -471,17 +464,17 @@ footer {
     color: black;
 }
 
-.no-liked {
-    font-size: 28px;
-    text-align: center;
+/* Review */
+.container-review {
+    font-family: 'Nunito', sans-serif;
 }
 
-/* Review */
 .title-review {
     text-align: center;
     color: var(--black);
     font-size: 2em;
     margin-top: 20px;
+    font-family: 'Raleway', sans-serif;
 }
   
 .detail-review {
@@ -527,37 +520,51 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 #0000001a;
     width: 100%;
-      height: 100%;
+    height: 100%;
 }
   
 .form-review span {
     padding-inline: 5px;
-    background-color: var(--yellow);
+    background-color: var(--primary-color);
+}
+
+.form-review h1 {
+    text-align: center;
 }
   
 .form-content {
-    margin-block: 15px;
+    margin-block: 14px;
+    align-items: center;
 }
   
 .form-label {
-    display: block;
+    display: inline-block;
     font-size: 1.4em;
     font-weight: 500;
 }
   
 .form-control {
-    display: block;
+    display: inline-block;
     width: 100%;
     font-size: 1.2em;
-    padding: 8px;
+    padding: 12px;
     border-radius: 10px;
     border: 1px var(--black) solid;
+    font-family: 'Nunito', sans-serif;
 }
   
 .btn {
+    font-size: larger;
+    font-family: 'Nunito', sans-serif;
     background-color: var(--black);
     color: var(--white);
     border: none;
-    padding: 8px 20px;
+    padding: 18px 20px;
     border-radius: 10px;
+    width: 100%;
+}
+
+.swal2-popup {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
 }

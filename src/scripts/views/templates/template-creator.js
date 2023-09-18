@@ -31,16 +31,12 @@ const createRestaurantDetailTemplate = (restaurant) => `
       <h2>Information & Menu</h2>
       <ul>
         <li>
-          <h3>Kota</h3>
-          <p>${restaurant.city}</p>
+          <i class="fa-solid fa-star fa-xl"></i>
+          <span>${restaurant.rating}</span>
         </li>
         <li>
-          <h3>Alamat</h3>
-          <p>${restaurant.address}</p>
-        </li>
-        <li>
-          <h3>Rating</h3>
-          <p>${restaurant.rating}</p>
+          <i class="fa-solid fa-house fa-xl"></i>
+          <span>${restaurant.address}, ${restaurant.city}</span>
         </li>
       </ul>
       
@@ -93,12 +89,10 @@ const createRestaurantDetailTemplate = (restaurant) => `
       <h1><span>Post your review!</span></h1>
       <form>
         <div class="form-content">
-          <label for="inputName" class="form-label">Name</label>
-          <input name="inputName" type="text" class="form-control" id="inputName">
+          <input name="inputName" type="text" class="form-control" id="inputName" placeholder="Name">
         </div>
         <div class="form-content">
-          <label for="inputReview" class="form-label">Your Review</label>
-          <input name="inputReview" type="text" class="form-control" id="inputReview">
+          <input name="inputReview" type="text" class="form-control" id="inputReview" placeholder="Your Review">
         </div>
         <button id="submit-review" type="submit" class="btn">Submit</button>
       </form>
