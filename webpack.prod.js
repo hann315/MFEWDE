@@ -1,7 +1,5 @@
-const path = require('path');
-const {merge} = require('webpack-merge');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const common = require('./webpack.common');
+const { merge } = require('webpack-merge');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -22,21 +20,4 @@ module.exports = merge(common, {
       },
     ],
   },
-  plugins: [
-    new WorkboxWebpackPlugin.GenerateSW({
-      swDest: './sw.bundle.js',
-      runtimeCaching: [
-        {
-          urlPattern: new RegExp('^https://restaurant-api.dicoding.dev/'),
-          handler: 'StaleWhileRevalidate',
-          options: {
-            cacheName: 'CACHE_NAME',
-            cacheableResponse: {
-              statuses: [200],
-            },
-          },
-        },
-      ],
-    }),
-  ],
 });
