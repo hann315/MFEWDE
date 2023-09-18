@@ -151,7 +151,7 @@ nav a:hover{
   
 .empty a {
     transition: all 0.1s ease-out;
-    color: #d4bb00;
+    color: var(--secondary-color);
 }
   
 .empty a:hover {
