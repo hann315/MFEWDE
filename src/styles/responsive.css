@@ -12,7 +12,7 @@
     }
 
     .menu-list {
-        background-color: #272e3b;
+        background-color: #FF2E63;
         fill-opacity: 0.5;
         position: fixed;
         top: 0;
@@ -59,7 +59,7 @@
         animation: enter 0.8s;
     }
 
-    .detail, resto-review {
+    .detail {
         width: 100%;
     }
      
