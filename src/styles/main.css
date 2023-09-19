@@ -6,7 +6,7 @@
     --hover-color: #2C3333;
     --black: #3e3e3e;
     --white: #faf0e6;
-    --yellow: #00ADB5;
+    --cyan: #00ADB5;
 }
 
 * {
@@ -23,12 +23,13 @@ body {
 }
   
 .skip-to-content {
+    font-family: 'Nunito', sans-serif;
     position: absolute;
     top: -100px;
     left: 0;
     background-color: #FF2E63;
     color: black;
-    padding: 8px;
+    padding: 12px;
     z-index: 100;
     text-decoration: none;
 }
@@ -95,6 +96,8 @@ nav a:hover{
 .menu-button {
     display: none;
     padding: 12px;
+    min-width: 55px;
+    min-height: 55px;
 }
 .menu-button i {
     font-size: 2em;
@@ -151,8 +154,7 @@ nav a:hover{
 }
   
 .empty h1 {
-    font-size: 1.7em;
-    font-weight: 600;
+    font-size: 2.01em;
 }
   
 .empty a {
@@ -161,7 +163,7 @@ nav a:hover{
 }
   
 .empty a:hover {
-    background-color: var(--yellow);
+    background-color: var(--primary-color);
     color: var(--black);
 }
   
@@ -228,7 +230,7 @@ nav a:hover{
 }
   
 .left:hover, .right:hover {
-    background-color: var(--yellow);
+    background-color: var(--cyan);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
 }
   
@@ -564,7 +566,10 @@ footer {
     width: 100%;
 }
 
-.swal2-popup {
+.small-toast-container {
     font-family: 'Nunito', sans-serif;
-    font-size: 18px;
-}
+    width: auto; /* Adjust the width as needed */
+    min-width: 200px; /* Adjust the minimum width as needed */
+    padding: 10px 15px; /* Adjust padding as needed */
+    font-size: 14px; /* Adjust font size as needed */
+  }

@@ -24,8 +24,8 @@ const Favorite = {
       if (restos.length === 0) {
         empty.innerHTML = `
           <img class="empty-thumb" src="./images/empty/empty.jpg" alt="">
-          <h1>You haven't liked any restaurants yet.<br>
-          Explore our <a href="#/">homepage</a> and find your favorites!</h1>
+          <h1>We are feeling unloved.<br>
+          Back to <a href="#/">homepage</a> and find your favorites!</h1>
         `;
       }
 
