@@ -47,9 +47,9 @@ const PostReview = async () => {
       title: 'Success!',
       text: 'Review has been added.',
       toast: true,
-      position: 'bottom-end',
+      position: 'bottom-left',
       showConfirmButton: false,
-      timer: 2000,
+      timer: 3000,
       timerProgressBar: true,
       customClass: {
         container: 'small-toast-container',
@@ -62,9 +62,9 @@ const PostReview = async () => {
       title: 'Oops...',
       text: 'Please complete all fields.',
       toast: true,
-      position: 'bottom-end',
+      position: 'bottom-left',
       showConfirmButton: false,
-      timer: 2000,
+      timer: 3000,
       timerProgressBar: true,
       customClass: {
         container: 'small-toast-container',
