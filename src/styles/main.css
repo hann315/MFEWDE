@@ -568,8 +568,8 @@ footer {
 
 .small-toast-container {
     font-family: 'Nunito', sans-serif;
-    width: auto; /* Adjust the width as needed */
-    min-width: 200px; /* Adjust the minimum width as needed */
-    padding: 10px 15px; /* Adjust padding as needed */
-    font-size: 14px; /* Adjust font size as needed */
-  }
+    width: auto;
+    min-width: 200px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
