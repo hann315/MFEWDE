@@ -1,4 +1,3 @@
-const path = require('path');
 const {merge} = require('webpack-merge');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const common = require('./webpack.common');
@@ -30,7 +29,7 @@ module.exports = merge(common, {
           urlPattern: new RegExp('^https://restaurant-api.dicoding.dev/'),
           handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'CACHE_NAME',
+            cacheName: 'RESTAURANT_API',
             cacheableResponse: {
               statuses: [200],
             },

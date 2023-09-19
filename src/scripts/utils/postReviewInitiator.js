@@ -41,17 +41,34 @@ const PostReview = async () => {
     inputReviewName.value = '';
     inputReview.value = '';
 
-    // Show success message
+    // Show success toast
     Swal.fire({
       icon: 'success',
       title: 'Success!',
-      text: 'Your review has been sent successfully.',
+      text: 'Review has been added.',
+      toast: true, // Set to true to display it as a toast
+      position: 'bottom-end', // Customize the toast position
+      showConfirmButton: false, // Hide the confirmation button
+      timer: 2000, // Automatically close the toast after 2 seconds
+      timerProgressBar: true, // Show the progress bar
+      customClass: {
+        container: 'small-toast-container', // Customize the container class
+      },
     });
   } else {
+    // Show warning toast
     Swal.fire({
-      icon: 'warning',
+      icon: 'error',
       title: 'Oops...',
       text: 'Please complete all fields.',
+      toast: true,
+      position: 'bottom-end',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      customClass: {
+        container: 'small-toast-container',
+      },
     });
   }
 };
