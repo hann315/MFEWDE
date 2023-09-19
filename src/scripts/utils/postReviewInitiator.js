@@ -46,19 +46,19 @@ const PostReview = async () => {
       icon: 'success',
       title: 'Success!',
       text: 'Review has been added.',
-      toast: true, // Set to true to display it as a toast
-      position: 'bottom-end', // Customize the toast position
-      showConfirmButton: false, // Hide the confirmation button
-      timer: 2000, // Automatically close the toast after 2 seconds
-      timerProgressBar: true, // Show the progress bar
+      toast: true,
+      position: 'bottom-end',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
       customClass: {
-        container: 'small-toast-container', // Customize the container class
+        container: 'small-toast-container',
       },
     });
   } else {
     // Show warning toast
     Swal.fire({
-      icon: 'error',
+      icon: 'warning',
       title: 'Oops...',
       text: 'Please complete all fields.',
       toast: true,
