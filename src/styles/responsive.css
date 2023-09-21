@@ -2,6 +2,10 @@
     nav {
         padding: 0 46px;
     }
+
+    .hero-image {
+        background-image: url('../public/images/hero-image/hero-small.jpg');
+    }
     
     .hero-description h2 {
         font-size: 24px;
@@ -27,7 +31,7 @@
     .menu-list li {
         width: 200px;
         padding: 20px 10px;
-        border-bottom: 1px solid rgb(6, 8, 39);
+        border-bottom: 1px solid #060827;
         text-align: right;
     }
     
@@ -76,6 +80,13 @@
         grid-column-start: 1;
         grid-column-end: 3;
     }
+}
+
+@media screen and (min-width: 601px) {
+    .hero-image {
+        background-image: url('../public/images/hero-image/hero-large.jpg');
+    }
+    
 }
 
 @media screen and (min-width: 650px) {

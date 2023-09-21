@@ -1,40 +1,18 @@
-/* eslint-disable max-len */
 import FavoriteRestoIdb from '../../data/favorite-resto-idb';
-import {
-  createRestaurantItemTemplate,
-} from '../templates/template-creator';
+import FavoriteRestoSearchView from './liked-restaurants/favorite-resto-search-view';
+import FavoriteRestoSearchPresenter from './liked-restaurants/favorite-resto-search-presenter';
+import FavoriteRestoShowPresenter from './liked-restaurants/favorite-Resto-show-presenter';
+
+const view = new FavoriteRestoSearchView();
 
 const Favorite = {
   async render() {
-    return `
-      <div class="content">
-        <h2 class="content__heading">Your Favorite Restaurants</h2>
-        <div class="empty" id="empty"></div>
-        <div id="resto-list" class="resto-list"></div>
-      </div>
-    `;
+    return view.getTemplate();
   },
 
   async afterRender() {
-    try {
-      const restos = await FavoriteRestoIdb.getAllResto();
-      const restosContainer = document.querySelector('#resto-list');
-      const empty = document.querySelector('#empty');
-
-      if (restos.length === 0) {
-        empty.innerHTML = `
-          <img class="empty-thumb" src="./images/empty/empty.jpg" alt="">
-          <h1>We are feeling unloved.<br>
-          Back to <a href="#/">homepage</a> and find your favorites!</h1>
-        `;
-      }
-
-      restos.forEach((resto) => {
-        restosContainer.innerHTML += createRestaurantItemTemplate(resto);
-      });
-    } catch (error) {
-      console.error('An error occurred:', error);
-    }
+    new FavoriteRestoShowPresenter({view, favoriteRestaurants: FavoriteRestoIdb});
+    new FavoriteRestoSearchPresenter({view, favoriteRestaurants: FavoriteRestoIdb});
   },
 };
 
