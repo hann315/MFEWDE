@@ -2,7 +2,7 @@ const assert = require('assert');
 // eslint-disable-next-line no-unused-vars
 const {async} = require('regenerator-runtime');
 
-Feature('Liking Restaurants');
+Feature('(Un)Liking Restaurants');
 
 Before(({I}) => {
   I.amOnPage('/#/favorite');
