@@ -1,4 +1,4 @@
-const { setHeadlessWhen, setCommonPlugins } = require('@codeceptjs/configure');
+const {setHeadlessWhen, setCommonPlugins} = require('@codeceptjs/configure');
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
@@ -13,22 +13,34 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: 'http://127.0.0.1:9000',
+      keepBrowserState: true,
+      fullPageScreenshots: true,
+      waitForNavigation: ['domcontentloaded'],
+      waitForAction: 1000,
       show: true,
-      windowSize: '1200x900'
-    }
+      browser: 'chrome',
+      chrome: {
+        args: ['--no-sandbox'],
+      },
+    },
+    REST: {
+      endpoint: 'https://restaurant-api.dicoding.dev',
+      defaultHeaders: {
+        'Content-Type': 'application/json',
+      },
+    },
+    JSONResponse: {},
   },
+  bootstrap: null,
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
   },
   bootstrap: null,
   mocha: {},
   name: 'MFEWDE-Submission_FAFR',
   plugins: {
-    retryFailedStep: {
-      enabled: true,
-    },
     screenshotOnFail: {
       enabled: true,
     },
   },
-}
+};

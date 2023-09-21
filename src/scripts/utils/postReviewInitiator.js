@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.all.min';
 import RestaurantSource from '../data/restaurant-source';
 import UrlParser from '../routes/url-parser';
 
