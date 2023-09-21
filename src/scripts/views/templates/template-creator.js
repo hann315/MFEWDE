@@ -19,7 +19,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => `
-<h2 class="content__heading">${restaurant.name} Detail</h2>
+<h2 class="content__heading resto-name">${restaurant.name} Detail</h2>
 <div class="detail">
     <img class="lazyload" src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" alt="Picture of ${restaurant.name}" />
 
