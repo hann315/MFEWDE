@@ -18,9 +18,9 @@ Scenario('liking one resto', async ({I}) => {
 
   I.amOnPage('/');
 
-  I.seeElement('.resto-name a');
+  I.seeElement('.resto-title a');
 
-  const firstResto = locate('.resto-name a').first();
+  const firstResto = locate('.resto-title a').first();
   const firstRestoTitle = await I.grabTextFrom(firstResto);
   I.click(firstResto);
 
@@ -29,7 +29,7 @@ Scenario('liking one resto', async ({I}) => {
 
   I.amOnPage('/#/favorite');
   I.seeElement('.resto-item');
-  const likedRestoTitle = await I.grabTextFrom('.resto-name');
+  const likedRestoTitle = await I.grabTextFrom('.resto-title');
 
   assert.strictEqual(firstRestoTitle, likedRestoTitle);
 });
@@ -39,9 +39,9 @@ Scenario('Unliking one resto', async ({I}) => {
 
   I.amOnPage('/');
 
-  I.seeElement('.resto-name a');
+  I.seeElement('.resto-title a');
 
-  const firstResto = locate('.resto-name a').first();
+  const firstResto = locate('.resto-title a').first();
   const firstRestoTitle = await I.grabTextFrom(firstResto);
   I.click(firstResto);
 
@@ -50,7 +50,7 @@ Scenario('Unliking one resto', async ({I}) => {
 
   I.amOnPage('/#/favorite');
   I.seeElement('.resto-item a');
-  const firstLikedResto = locate('.resto-name a').first();
+  const firstLikedResto = locate('.resto-title a').first();
   const firstLikedRestoTitle = await I.grabTextFrom(firstLikedResto);
 
   assert.strictEqual(firstRestoTitle, firstLikedRestoTitle);
