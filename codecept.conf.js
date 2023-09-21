@@ -22,7 +22,7 @@ exports.config = {
   },
   bootstrap: null,
   mocha: {},
-  name: 'Submission_Achmad Syarif Arifiansyah',
+  name: 'MFEWDE-Submission_FAFR',
   plugins: {
     retryFailedStep: {
       enabled: true,
