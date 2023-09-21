@@ -4,7 +4,7 @@ class FavoriteRestoSearchView {
   getTemplate() {
     return `
       <div class="content">
-        <h2 class="content__heading">Favorite Restaurant</h2>
+        <h2 class="content__heading">Your Favorite Restaurants</h2>
         <input id="query" class="search-favorite" type="text" placeholder="Search Restaurant">
         <div id="resto-list" class="resto-list"></div>
       </div>
@@ -32,15 +32,7 @@ class FavoriteRestoSearchView {
   }
 
   _getEmptyRestoTemplate() {
-    return `
-      <div class="resto-item__not__found empty">
-        <img class="empty-thumb" src="./images/empty/empty.jpg" alt="">
-        <h1 class="empty">
-          We are feeling unloved.<br>
-          Back to <a href="#/" class="empty">homepage</a> and find your favorites!
-        </h1>
-      </div>
-    `;
+    return `<div class="resto-item__not__found">Oops! Your favorites feel unloved.</div>`;
   }
 }
 

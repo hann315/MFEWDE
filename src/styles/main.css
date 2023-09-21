@@ -105,7 +105,6 @@ nav a:hover{
 
 .hero-image{
     height: 600px;
-    background-image: url("../public/images/heros/hero.jpg");
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
@@ -148,32 +147,14 @@ nav a:hover{
 }
 
 /* Empty favorite image */
-  .resto-item__not__found {
+.resto-item__not__found {
+    font-size: 1.60em;
     font-family: 'Nunito', sans-serif;
     text-align: center;
-  }
+    max-width: 100%; /* Set a maximum width to prevent the text from stretching too wide */
+    margin: 40 auto; /* Center horizontally */
+}
 
-  .resto-item__not__found h1 {
-    font-size: 2.01em;
-  }
-
-  .resto-item__not__found a {
-    transition: all 0.1s ease-out;
-    color: var(--secondary-color);
-  }
-
-  .resto-item__not__found a:hover {
-    background-color: var(--primary-color);
-    color: var(--black);
-  }
-
-  .empty-thumb {
-    width: 50%;
-    border: #d0d0d0 2px solid;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    object-fit: cover;
-  }
 
 /* menu detail */
 .detail-menu {
