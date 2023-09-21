@@ -5,8 +5,9 @@ import {
 } from '../views/templates/template-creator';
 
 const LikeButtonInitiator = {
-  async init({likeButtonContainer, resto}) {
+  async init({likeButtonContainer, favoriteRestaurants, resto}) {
     this._likeButtonContainer = likeButtonContainer;
+    this._favoriteRestaurants = favoriteRestaurants;
     this._resto = resto;
 
     await this._renderButton();

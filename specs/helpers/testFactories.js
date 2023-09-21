@@ -1,12 +1,12 @@
-import LikeButtonPresenter from '../../src/scripts/utils/like-button-presenter';
+import LikeButtonInitiator from '../../src/scripts/utils/like-button-initiator';
 import FavoriteRestoIdb from '../../src/scripts/data/favorite-resto-idb';
 
-const createLikeButtonPresenterWithResto = async (resto) => {
-  await LikeButtonPresenter.init({
+const createLikeButtonInitiatorWithResto = async (resto) => {
+  await LikeButtonInitiator.init({
     likeButtonContainer: document.querySelector('#likeButtonContainer'),
     favoriteRestaurants: FavoriteRestoIdb,
     resto,
   });
 };
 
-export {createLikeButtonPresenterWithResto};
+export {createLikeButtonInitiatorWithResto};
