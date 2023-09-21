@@ -6,6 +6,7 @@ import './views/component/app-hero';
 import './views/component/app-footer';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
