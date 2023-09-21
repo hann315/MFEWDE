@@ -56,13 +56,13 @@ describe('Searching restaurants', () => {
 
     it('should show the title of the found restaurants', () => {
       presenter._showFoundResto([{id: 1, name: 'Satu'}]);
-      expect(document.querySelectorAll('.resto-name').item(0).textContent)
+      expect(document.querySelectorAll('.resto-title').item(0).textContent)
           .toEqual('Satu');
     });
 
     it('should show - when the resto returned does not contain a title', (done) => {
       document.getElementById('resto-list').addEventListener('restaurants:updated', () => {
-        const restoTitles = document.querySelectorAll('.resto-name');
+        const restoTitles = document.querySelectorAll('.resto-title');
         expect(restoTitles.item(0).textContent).toEqual('-');
 
         done();

@@ -5,13 +5,13 @@ const createRestaurantItemTemplate = (restaurant) => `
 <div class="resto-item">
     <div class="resto-header">
       <img class="resto-image lazyload" alt="Picture of ${restaurant.name}"
-        data-src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}">
+        data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
       <div class="resto-rating">
         <p><i class="fa fa-star"></i><span>${restaurant.rating}</span></p>
       </div>
     </div>
     <div class="resto-info">
-      <h3 class="resto-name"><a href="/#/detail/${restaurant.id}">${restaurant.name || '-'}</a></h3>
+      <h3 class="resto-title"><a href="/#/detail/${restaurant.id}">${restaurant.name || '-'}</a></h3>
       <h4 class="resto-city">${restaurant.city}</h4>
       <p class="resto-description">${restaurant.description}</p>
     </div>
@@ -19,10 +19,9 @@ const createRestaurantItemTemplate = (restaurant) => `
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => `
-<h2 class="content__heading resto-name">${restaurant.name} Detail</h2>
+<h2 class="content__heading resto-title">${restaurant.name} Detail</h2>
 <div class="detail">
-    <img class="lazyload" src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" alt="Picture of ${restaurant.name}" />
-
+    <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Picture of ${restaurant.name}" />
     <div class="overview">
       <h2>Overview</h2>
       <p>${restaurant.description}</p>
