@@ -63,7 +63,7 @@ describe('Searching restaurants', () => {
     it('should show - when the resto returned does not contain a title', (done) => {
       document.getElementById('resto-list').addEventListener('restaurants:updated', () => {
         const restoTitles = document.querySelectorAll('.resto-name');
-        expect(restoTitles.item(0).textContent).toEqual('undefined');
+        expect(restoTitles.item(0).textContent).toEqual('-');
 
         done();
       });

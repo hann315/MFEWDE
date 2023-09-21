@@ -26,7 +26,7 @@ describe('Showing all favorite restaurants', () => {
       presenter._displayResto(restaurants);
 
       expect(document.querySelectorAll('.resto-item__not__found').length)
-        .toEqual(1);
+          .toEqual(1);
     });
 
     it('should ask for the favorite restaurants', () => {
