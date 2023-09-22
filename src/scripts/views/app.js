@@ -1,6 +1,7 @@
 import DrawerInitiator from '../utils/drawer-initiator';
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
+import Swal from 'sweetalert2/dist/sweetalert2.all.min';
 
 class App {
   constructor({button, drawer, content}) {
@@ -22,8 +23,18 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
 
-    this._content.innerHTML = await page.render();
-    await page.afterRender();
+    try {
+      this._content.innerHTML = await page.render();
+      await page.afterRender();
+    } catch (error) {
+      Swal.fire({
+        title: 'An error occured',
+        text: error,
+        icon: 'error',
+        confirmButtonText: 'OK',
+        footer: 'Back to <a href="/#">homepage</a>',
+      });
+    }
   }
 }
 
