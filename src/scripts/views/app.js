@@ -20,21 +20,27 @@ class App {
   }
 
   async renderPage() {
-    const url = UrlParser.parseActiveUrlWithCombiner();
-    const page = routes[url];
-
     try {
-      this._content.innerHTML = await page.render();
+      const url = UrlParser.parseActiveUrlWithCombiner();
+      const page = routes[url];
+
+      const pageContent = await page.render();
+      this._content.innerHTML = pageContent;
+
       await page.afterRender();
     } catch (error) {
-      Swal.fire({
-        title: 'An error occured',
-        text: error,
-        icon: 'error',
-        confirmButtonText: 'OK',
-        footer: 'Back to <a href="/#">homepage</a>',
-      });
+      this._handleError(error);
     }
+  }
+
+  _handleError(error) {
+    Swal.fire({
+      title: 'An error occurred',
+      text: error,
+      icon: 'error',
+      confirmButtonText: 'OK',
+      footer: 'Back to <a href="/#">homepage</a>',
+    });
   }
 }
 
