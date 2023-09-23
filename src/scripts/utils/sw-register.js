@@ -1,21 +1,21 @@
 /* eslint-disable max-len */
-import * as WorkboxWindow from 'workbox-window';
+import {Workbox} from 'workbox-window';
 
 const swRegister = async () => {
   try {
     if ('serviceWorker' in navigator) {
-      const wb = new WorkboxWindow.Workbox('./sw.bundle.js');
+      const workbox = new Workbox('./sw.bundle.js');
 
-      wb.addEventListener('waiting', () => {
+      workbox.addEventListener('waiting', () => {
         console.log('New service worker waiting to activate. Please refresh the page.');
       });
 
-      wb.addEventListener('activated', () => {
+      workbox.addEventListener('activated', () => {
         console.log('New service worker activated.');
       });
 
-      await wb.register();
-      console.log('Service worker registered.');
+      await workbox.register();
+      console.log('Service worker registered successfully.');
     }
   } catch (error) {
     console.error('Failed to register service worker:', error);

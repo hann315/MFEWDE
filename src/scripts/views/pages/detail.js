@@ -35,11 +35,6 @@ const Detail = {
           rating: resto.rating,
         },
       });
-
-      const restoReview = document.querySelector('resto-review');
-      resto.customerReviews.forEach((review) => {
-        restoReview.innerHTML += createRestaurantReviewTemplate(review);
-      });
     } catch (error) {
       console.error('An error occurred:', error);
     }

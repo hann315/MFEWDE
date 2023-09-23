@@ -14,63 +14,75 @@ const PostReview = async () => {
     review: inputReview.value,
   };
 
-  const formatDate = (date) => {
-    return new Date(date).toLocaleDateString('id-ID', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
-
-  const createReviewItem = (name, date, review) => `
-    <div class="detail-review-item">
-      <div class="header-review">
-        <p class="name-review">${name}</p>
-        <p class="date-review">${date}</p>
-      </div>
-      <div class="body-review">${review}</div>
-    </div>
-  `;
-
-  if (dataInput.name !== '' && dataInput.review !== '') {
-    await RestaurantSource.postReview(dataInput);
-    const dateFormatted = formatDate(new Date());
-    // eslint-disable-next-line max-len
-    const newReview = createReviewItem(dataInput.name, dateFormatted, dataInput.review);
-    reviewContainer.innerHTML += newReview;
-    inputReviewName.value = '';
-    inputReview.value = '';
-
-    // Show success toast
-    Swal.fire({
-      icon: 'success',
-      title: 'Success!',
-      text: 'Review has been added.',
-      toast: true,
-      position: 'bottom-left',
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      customClass: {
-        container: 'small-toast-container',
-      },
-    });
+  if (isValidInput(dataInput)) {
+    try {
+      await RestaurantSource.postReview(dataInput);
+      const dateFormatted = formatDate(new Date());
+      const newReview = createReviewItem(dataInput.name, dateFormatted, dataInput.review);
+      appendReviewToContainer(reviewContainer, newReview);
+      clearInputFields(inputReviewName, inputReview);
+      showSuccessToast();
+    } catch (error) {
+      showErrorToast('An error occurred while posting the review.');
+    }
   } else {
-    // Show warning toast
-    Swal.fire({
-      icon: 'warning',
-      title: 'Oops...',
-      text: 'Please complete all fields.',
-      toast: true,
-      position: 'bottom-left',
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      customClass: {
-        container: 'small-toast-container',
-      },
-    });
+    showWarningToast('Please complete all fields.');
   }
+};
+
+const isValidInput = (dataInput) => {
+  return dataInput.name !== '' && dataInput.review !== '';
+};
+
+const formatDate = (date) => {
+  return new Date(date).toLocaleDateString('id-ID', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
+
+const createReviewItem = (name, date, review) => `
+  <div class="detail-review-item">
+    <div class="header-review">
+      <p class="name-review">${name}</p>
+      <p class="date-review">${date}</p>
+    </div>
+    <div class="body-review">${review}</div>
+  </div>
+`;
+
+const appendReviewToContainer = (container, review) => {
+  container.innerHTML += review;
+};
+
+const clearInputFields = (inputName, inputReview) => {
+  inputName.value = '';
+  inputReview.value = '';
+};
+
+const showSuccessToast = () => {
+  showToast('success', 'Success!', 'Review has been added.');
+};
+
+const showWarningToast = (message) => {
+  showToast('warning', 'Oops...', message);
+};
+
+const showToast = (icon, title, text) => {
+  Swal.fire({
+    icon,
+    title,
+    text,
+    toast: true,
+    position: 'bottom-left',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    customClass: {
+      container: 'small-toast-container',
+    },
+  });
 };
 
 export default PostReview;
