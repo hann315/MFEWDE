@@ -1,28 +1,37 @@
+import axios from 'axios';
 import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestaurantDbSource {
+  static async fetchData(url, options = {}) {
+    try {
+      const response = await axios(url, options);
+      return response.data;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
   static async listRestaurant() {
-    const response = await fetch(API_ENDPOINT.LIST);
-    const responseJson = await response.json();
-    return responseJson.restaurants;
+    const url = API_ENDPOINT.LIST;
+    return this.fetchData(url).then((responseJson) => responseJson.restaurants);
   }
 
   static async detailRestaurant(id) {
-    const response = await fetch(API_ENDPOINT.DETAIL(id));
-    const responseJson = await response.json();
-    return responseJson.restaurant;
+    const url = API_ENDPOINT.DETAIL(id);
+    return this.fetchData(url).then((responseJson) => responseJson.restaurant);
   }
 
   static async postReview(data) {
+    const url = API_ENDPOINT.POST_REVIEW;
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      data: JSON.stringify(data),
     };
-    const response = await fetch(API_ENDPOINT.POST_REVIEW, options);
-    return response.json();
+
+    return this.fetchData(url, options);
   }
 }
 
