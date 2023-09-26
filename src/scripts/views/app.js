@@ -38,7 +38,6 @@ class App {
       title: 'An error occurred',
       text: error,
       icon: 'error',
-      confirmButtonText: 'OK',
       footer: 'Back to <a href="/#">homepage</a>',
     });
   }
