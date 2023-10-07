@@ -17,16 +17,14 @@ Scenario('success to add restaurant review', async ({I}) => {
   I.waitForElement('.form-review', 5);
   I.seeElement('.form-review');
 
-  const name = 'Zeta';
-  const reviewText = 'A A A';
+  const name = 'Chef Imran';
+  const reviewText = 'Roti Jala Mak Limah Biadap is the best!';
   I.fillField('#inputName', name);
   I.fillField('#inputReview', reviewText);
   I.click('.btn');
   I.seeTextEquals('Success!', '.swal2-title');
   I.seeTextEquals('Review has been added.', '.swal2-html-container');
 
-  // Need to fix this
-  //   Baseline: https://github.com/LukmanRambe/Sekawan-Restaurant/tree/submission-3
   I.sendGetRequest(`/detail/${firstRestaurantId}`);
   I.seeResponseCodeIsSuccessful();
   I.seeResponseContainsKeys(['restaurant']);
