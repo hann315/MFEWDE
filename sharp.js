@@ -11,7 +11,6 @@ if (!fs.existsSync(destination)) {
 
 fs.readdirSync(target)
     .forEach((image) => {
-    // resize images with width 800px, with prefix -large.jpg
       sharp(`${target}/${image}`)
           .resize(800)
           .toFile(path.resolve(
@@ -19,7 +18,6 @@ fs.readdirSync(target)
               `${destination}/${image.split('.').slice(0, -1).join('.')}-large.jpg`,
           ));
 
-      // resize images with width 480px, with prefix -small.jpg
       sharp(`${target}/${image}`)
           .resize(480)
           .toFile(path.resolve(
