@@ -129,3 +129,4 @@ dist
 package-lock.json
 *.zip
 e2e/outputs
+yarn.lock

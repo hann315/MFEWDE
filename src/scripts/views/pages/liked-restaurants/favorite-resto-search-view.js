@@ -32,7 +32,7 @@ class FavoriteRestoSearchView {
   }
 
   _getEmptyRestoTemplate() {
-    return `<div class="resto-item__not__found">Oops! Your favorites feel unloved.</div>`;
+    return `<div class="resto-item__not__found">Oops! Your favorites feel unloved</div>`;
   }
 }
 

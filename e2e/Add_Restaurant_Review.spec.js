@@ -17,13 +17,13 @@ Scenario('success to add restaurant review', async ({I}) => {
   I.waitForElement('.form-review', 5);
   I.seeElement('.form-review');
 
-  const name = 'Chef Imran';
-  const reviewText = 'Roti Jala Mak Limah Biadap is the best!';
+  const name = 'Jang Wonyoung';
+  const reviewText = 'Imma baddie';
   I.fillField('#inputName', name);
   I.fillField('#inputReview', reviewText);
   I.click('.btn');
   I.seeTextEquals('Success!', '.swal2-title');
-  I.seeTextEquals('Review has been added.', '.swal2-html-container');
+  I.seeTextEquals('Review has been added', '.swal2-html-container');
 
   I.sendGetRequest(`/detail/${firstRestaurantId}`);
   I.seeResponseCodeIsSuccessful();
@@ -46,5 +46,5 @@ Scenario('failed to add restaurant review', async ({I}) => {
   I.click('.btn');
 
   I.seeTextEquals('Oops...', '.swal2-title');
-  I.seeTextEquals('Please complete all fields.', '.swal2-html-container');
+  I.seeTextEquals('Please complete all fields', '.swal2-html-container');
 });

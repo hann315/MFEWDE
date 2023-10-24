@@ -23,10 +23,10 @@ const PostReview = async () => {
       clearInputFields(inputReviewName, inputReview);
       showSuccessToast();
     } catch (error) {
-      showErrorToast('An error occurred while posting the review.');
+      showErrorToast('An error occurred while posting the review');
     }
   } else {
-    showWarningToast('Please complete all fields.');
+    showWarningToast('Please complete all fields');
   }
 };
 
@@ -62,7 +62,7 @@ const clearInputFields = (inputName, inputReview) => {
 };
 
 const showSuccessToast = () => {
-  showToast('success', 'Success!', 'Review has been added.');
+  showToast('success', 'Success!', 'Review has been added');
 };
 
 const showWarningToast = (message) => {

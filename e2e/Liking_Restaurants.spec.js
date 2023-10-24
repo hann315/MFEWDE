@@ -10,11 +10,11 @@ Before(({I}) => {
 
 Scenario('showing empty liked restaurants', ({I}) => {
   I.seeElement('#query');
-  I.see('Oops! Your favorites feel unloved.', '.resto-item__not__found');
+  I.see('Oops! Your favorites feel unloved', '.resto-item__not__found');
 });
 
 Scenario('liking one resto', async ({I}) => {
-  I.see('Oops! Your favorites feel unloved.', '.resto-item__not__found');
+  I.see('Oops! Your favorites feel unloved', '.resto-item__not__found');
 
   I.amOnPage('/');
 
@@ -35,7 +35,7 @@ Scenario('liking one resto', async ({I}) => {
 });
 
 Scenario('Unliking one resto', async ({I}) => {
-  I.see('Oops! Your favorites feel unloved.', '.resto-item__not__found');
+  I.see('Oops! Your favorites feel unloved', '.resto-item__not__found');
 
   I.amOnPage('/');
 
@@ -61,5 +61,5 @@ Scenario('Unliking one resto', async ({I}) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
-  I.see('Oops! Your favorites feel unloved.', '.resto-item__not__found');
+  I.see('Oops! Your favorites feel unloved', '.resto-item__not__found');
 });
