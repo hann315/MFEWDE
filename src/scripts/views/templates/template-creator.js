@@ -38,7 +38,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
           <span>${restaurant.address}, ${restaurant.city}</span>
         </li>
         <li>
-         <i class="fa-solid fa-book fa-xl"></i>
+          <i class="fa-solid fa-book fa-xl"></i>
           <span>${restaurant.categories.map((category) => category.name).join(', ')}</span>
         </li>
       </ul>
