@@ -37,6 +37,10 @@ const createRestaurantDetailTemplate = (restaurant) => `
           <i class="fa-solid fa-house fa-xl"></i>
           <span>${restaurant.address}, ${restaurant.city}</span>
         </li>
+        <li>
+          <i class="fa-solid fa-book fa-xl"></i>
+          <span>${restaurant.categories.map((category) => category.name).join(', ')}</span>
+        </li>
       </ul>
       
       <div class="detail-menu">
